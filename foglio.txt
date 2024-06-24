@@ -1,0 +1,7 @@
+SELECT * FROM itemModel 
+INNER JOIN itemModelImage ON itemModel.itemModelId = itemModelImage.ItemModelId 
+INNER JOIN modelCategory ON itemModel.itemModelId = modelCategory.ItemModelId 
+INNER JOIN category ON itemModel.ItemModelId = itemModelImage.ItemModelId 
+INNER JOIN company ON itemModel.companyId = company.companyId 
+WHERE itemModelImage.isMain = 1 
+AND WHERE itemModel.name LIKE('123%');

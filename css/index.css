@@ -1,0 +1,247 @@
+:root
+{
+    
+
+    --navbarColor: #262626;
+    --selected: #141414;
+    --smallTitleColor : #464646;
+    --smallSelectionColor: #9B9B9B;
+    --hintColor : #BABABA;
+
+    --hover-card-transition: 300ms
+}
+
+body,html {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+img
+{
+    size: 100%;
+}
+
+/* Tailwind support for variables is bugged for me so this is needed*/
+.bg-navbar
+{
+    background-color: var(--navbarColor);
+}
+
+.bg-selected
+{
+    background-color: var(--selected);
+}
+
+.bg-smallTitle
+{
+    background-color: var(--smallTitleColor);
+}
+
+.bg-smallSelection
+{
+    background-color: var(--smallSelectionColor);
+}
+
+.text-smallTitle
+{
+    color: var(--smallTitleColor);
+}
+
+.text-smallSelection
+{
+    color: var(--smallSelectionColor);
+}
+
+.border-smallSelection
+{
+    border-color: var(--smallSelectionColor);
+}
+
+/* These classes are shortcuts for setting fonts*/
+
+.font-inria {
+    font-family: "Inria Sans", sans-serif;
+}
+
+.font-inder {
+    font-family: "Inder";
+}
+
+.font-inter {
+    font-family: "Inter";
+}
+
+.text-hint {
+    color: var(--hintColor);
+}
+
+/*--------------------------------------------------*/
+
+.navbarContainer
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.hero
+{
+    background-color: black;
+    background-image: url("../Images/piano-1846719.jpg");
+    background-size: cover;
+    filter: grayscale();
+
+    height: 100%;
+}
+
+.hero::before
+{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 50%;
+    color: white;
+    content: "";
+}
+.darken
+{
+    height: 100%;
+    background-size: cover;
+    background-color: black;
+}
+
+.button-shape
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 90px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-shape-2
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-card
+{
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: var(--hover-card-transition);
+    transition-timing-function: ease-out;
+
+    cursor: pointer;
+    
+    display: flex;
+    align-items: end;
+
+}
+
+.hover-card:hover
+{
+    background-size: 120%;
+    filter: brightness(70%);
+}
+
+.hover-card-border
+{
+    border: 1px solid var(--smallSelectionColor);
+    border-radius: 10px;
+}
+
+.hover-card-text
+{
+    height: fit-content;
+    width: 100%;
+    user-select: none;
+
+    display: flex;
+    align-items: end;
+
+    padding: 10px;
+
+    color:white;
+    background-color: black;
+    font-family: "Inter";
+
+    opacity: 0%;
+    transition: var(--hover-card-transition);
+    filter: none;
+}
+
+.hover-card:hover > .hover-card-text
+{
+    opacity: 100%;
+}
+
+.page-padding
+{
+    padding: 0 200px;
+}
+
+.invisibleMenu
+{
+    display: block;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.activeSidebarElement
+{
+    color:white;
+}
+
+.quantityButton
+{
+    width: 40px;
+    aspect-ratio: 1/1;
+    color:white;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Inria Sans", sans-serif;
+}
+
+.optionButton
+{
+    border: 1px solid var(--smallSelectionColor)
+}
+
+.selectedOptionButton
+{
+    border: 3px solid #00A3FF !important
+}
+
+.button-response:active
+{
+    animation-name: bluetoblack;
+    animation-duration: 500ms;
+}
+
+@keyframes bluetoblack
+{
+    from {background-color: #00A3FF;}
+    to {background-color: var(--selected);}
+}
